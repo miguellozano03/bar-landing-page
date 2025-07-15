@@ -1,0 +1,347 @@
+@import url("../css/index.css");
+
+/* Estilos generales */
+.main-container,
+.event-section, 
+.social-media {
+  min-height: 100vh;
+  padding: 0 5rem;
+}
+
+/* Hero section */
+.main-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.text-container {
+  max-width: 700px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-container h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--beige);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.text-container p {
+  color: var(--beige);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+
+.line-separator-fake {
+  height: 3px;
+  width: 150px;
+  background: linear-gradient(90deg, var(--wheat), var(--beige));
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+.tag {
+  color: var(--wheat);
+  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Event section */
+.event-section {
+  padding-top: 5rem;
+  background-color: #fffafa;
+  color: black;
+}
+
+.event-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  color: var(--dark-brown);
+}
+
+.tag__section {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: var(--light-brown);
+  margin-bottom: 0.5rem;
+}
+
+.event-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-card {
+  display: flex;
+  border-bottom: 1px solid var(--light-brown);
+  width: 100%;
+  align-items: center;
+  padding: 1.5rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.img-event-card {
+  height: 120px;
+  width: 200px;
+  min-width: 120px;
+  margin-right: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-event-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.img-event-card:hover img {
+  transform: scale(1.05);
+}
+
+.text-event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: black;
+  flex: 1;
+}
+
+.text-event-card h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--dark-brown);
+  margin-bottom: 0.5rem;
+}
+
+.text-event-card p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--light-brown);
+  margin: 0;
+}
+
+.event-section .button {
+  margin-bottom: 4rem; /* espacio extra debajo del botón */
+}
+
+/* Social media section */
+.social-media {
+  padding-top: 5rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.social-media h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  color: var(--dark-brown);
+}
+
+.tag_social-media {
+  color: var(--light-brown);
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+.social-media p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--mid-brown);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  font-size: 2rem;
+  color: var(--dark-brown);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: var(--light-brown);
+}
+
+
+.button {
+  background-color: var(--wheat);
+  color: var(--dark-brown);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  align-self: center;
+}
+
+.button:hover {
+  background-color: var(--dark-brown);
+  color: var(--wheat);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .main-container,
+  .event-section,
+  .social-media {
+    padding: 0 3rem;
+  }
+  
+  .text-container {
+    max-width: 600px;
+  }
+  
+  .img-event-card {
+    width: 150px;
+    height: 100px;
+    min-width: 100px;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container,
+  .event-section,
+  .social-media {
+    padding: 0 2rem;
+  }
+  
+  .main-container {
+    background-attachment: scroll;
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+  
+  .text-container {
+    max-width: 100%;
+  }
+  
+  .event-section {
+    padding-top: 3rem;
+  }
+  
+  .event-list-container {
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .img-event-card {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .text-event-card {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .social-media {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container,
+  .event-section,
+  .social-media {
+    padding: 0 1rem;
+  }
+  
+  .main-container {
+    padding-top: 70px;
+  }
+  
+  .text-container {
+    padding: 0 1rem;
+  }
+  
+  .line-separator-fake {
+    width: 100px;
+    height: 2px;
+  }
+  
+  .event-list-container {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .event-card {
+    padding: 0.5rem 0;
+  }
+  
+  .img-event-card {
+    height: 150px;
+  }
+  
+  .social-media button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mejoras para pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .text-container h1 {
+    font-size: 2rem;
+  }
+  
+  .text-container p {
+    font-size: 0.9rem;
+  }
+  
+  .img-event-card {
+    height: 120px;
+  }
+}
