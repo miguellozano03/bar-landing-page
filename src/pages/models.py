@@ -9,7 +9,7 @@ class Event(models.Model):
     end_time = models.TimeField(verbose_name="End time of the event")
 
     def hour_range(self):
-        return f"{self.start_time.strftime('%-I%p').lower()} - {self.end_time.strftime('%-I%p').lower}"
+        return f"{self.start_time.strftime('%-I%p').lower()} - {self.end_time.strftime('%-I%p').lower()}"
     
     def formatted_date(self):
         return f"{self.date.strftime('%A, %B %d, %Y')}"
