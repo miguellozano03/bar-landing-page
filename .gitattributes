@@ -1,0 +1,7 @@
+# Trata los .html como Jinja (similar a Django templates)
+*.html linguist-language=Jinja
+
+# Ignora archivos y carpetas que no son código real
+static/** linguist-vendored
+*.css linguist-vendored
+
