@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Events{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'pages/css/events.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="events-hero">
+    <div class="hero-content">
+        <h1>Curated Experiences</h1>
+        <p>Enjoy unforgettable evenings filled with fine dining, live music, and handcrafted cocktails</p>
+    </div>
+</div>
+
+<div class="container">
+    <section class="event-section">
+        <h2 class="section-title">Upcoming Experiences</h2>
+        <p class="section-description">Join us for curated culinary evenings, mixology sessions, and exclusive live music performances.</p>
+
+        <div class="event-list-container">
+            {% if events %}
+                {% for event in events %}
+                <div class="event-card">
+                    <div class="img-event-card">
+                        <img src="{% static 'pages/img/bg.jpg' %}" alt="Event Image">
+                    </div>
+                    <div class="text-event-card">
+                        <h3 class="event-title">{{ event.title }}</h3>
+                        <p class="event-meta">{{ event.formatted_date }} • {{ event.hour_range }}</p>
+                        {% if event.description %}
+                        <p class="event-description">{{ event.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p> No upcoming events </p>
+            {% endif %}
+        </div>
+    </section>
+</div>
+{% endblock %}
