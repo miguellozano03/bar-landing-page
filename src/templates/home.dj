@@ -1,7 +1,63 @@
 {% extends "base.dj" %}
+{% load static %}
 
-{% block title %} Home page {% endblock%} 
+{% block title %} Home {% endblock%} 
+
+{% block extra_css %}
+
+<link rel="preload" href="{% static 'pages/css/home.css' %}" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{% static 'pages/css/home.css' %}"></noscript>
+{% endblock %}
 
 {% block content %}
-<h1>Home</h1>
+<main class="main-container">
+    <div class="text-container">
+        <span class="tag">Events</span>
+        <h1>Unforgettable Nights Await</h1>
+        <div class="line-separator-fake"></div>
+        <p>Step into a world of crafted cocktails, smooth beats, and curated vibes. Our weekly events are designed to elevate your nights — from laid-back acoustic sessions to electrifying DJ sets.</p>
+        <p><strong>Mark your calendar, grab your crew, and make it a night to remember.</strong></p>
+    </div>
+</main>
+<section class="event-section">
+    <span class="tag tag__section">Events</span>
+    <h2>Our Events list</h2>
+    <div class="event-list-container">
+
+        {% for event in events %}
+         <div class="event-card">
+            <div class="img-event-card">
+                <img src="{% static 'pages/img/bg.jpg' %}" alt="img card">
+            </div>
+            <div class="text-event-card">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.formatted_date}} • {{event.hour_range}}</p>
+            </div>
+        </div>
+        {% endfor %}
+
+        <button class="button" onclick="location.href='{% url 'events' %}'">Full event list</button>
+
+    </div>
+</section>
+
+<section class="social-media">
+
+    <span class="tag tag_social-media">SOCIAL MEDIA</span>
+    <h2>We pour vibes, not just drinks.</h2>
+    <p>Follow us on Instagram, TikTok & Facebook for behind-the-scenes, mixology tips, and all the wild moments we don’t post twice.</p>
+
+    <div class="social-links">
+        <a href="#" target="_blank">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="#" target="_blank">
+            <i class="bi bi-tiktok"></i>
+        </a>
+        <a href="#" target="_blank">
+            <i class="bi bi-facebook"></i>
+        </a>
+    </div>
+</section>
+
 {% endblock %}
