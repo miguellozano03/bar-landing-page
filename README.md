@@ -18,7 +18,7 @@ Landing page ficticia desarrollada con Django para un bar moderno con eventos se
 - Bootstrap Icons
 - PostgreSQl / Sqlite3
 
-## ▶️ Cómo correr localmente
+## ▶️ How to run locally
 
 ```bash
 git clone https://github.com/quesoCosteno03/bar-landing-page.git
