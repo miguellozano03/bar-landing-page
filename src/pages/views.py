@@ -10,16 +10,16 @@ def home_view(request):
         'events': events
     }
     
-    return render(request, 'home.dj', context)
+    return render(request, 'home.html', context)
 
 def menu_view(request):
-    return render(request, 'menu.dj')
+    return render(request, 'menu.html')
 
 def events_view(request):
     events = Event.objects.order_by('date')
     context = {
         'events': events}
-    return render(request, 'events.dj', context)
+    return render(request, 'events.html', context)
 
 def contact_view(request):
-    return render(request, 'contact.dj')
+    return render(request, 'contact.html')
