@@ -16,7 +16,7 @@ Landing page ficticia desarrollada con Django para un bar moderno con eventos se
 - Python 3.x
 - Django 4.x
 - Bootstrap Icons
-- PostgreSQl / Sqlite3
+- PostgreSQL / Sqlite3
 
 ## ▶️ How to run locally
 
