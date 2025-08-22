@@ -9,7 +9,10 @@ class Event(models.Model):
     end_time = models.TimeField(verbose_name="End time of the event")
 
     def hour_range(self):
-        return f"{self.start_time.strftime('%-I%p').lower()} - {self.end_time.strftime('%-I%p').lower()}"
-    
+        # %I → hora 12h con cero (01, 02...)
+        # lstrip("0") → le quita el cero inicial
+        return f"{self.start_time.strftime('%I%p').lstrip('0').lower()} - {self.end_time.strftime('%I%p').lstrip('0').lower()}"
+
     def formatted_date(self):
-        return f"{self.date.strftime('%A, %B %d, %Y')}"
+        # Esto sí es portable en Windows/Linux
+        return self.date.strftime("%A, %B %d, %Y")
